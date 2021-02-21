@@ -22,10 +22,19 @@
     - name: Print URL1 var from CLI
       debug:
         msg: pusdfdf URL2 = {{ URL2 }}
-- name: Demo on clin Inventory varibels
+- name: Demo on cli from  Inventory varibels
   hosts: all
   tasks:
     - name: print URL3 varaibles from inventory loc
       debug:
         msg: print inv var URL3 = {{ URL3 }}
+
+- name: demo on varible population from file
+  hosts:
+  vars:
+    - filevar.yml
+  tasks:
+    - name: print varble from file
+      debug:
+        msg: print file varible URL4 = {{ FILE_URL }}
 

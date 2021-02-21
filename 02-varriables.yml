@@ -21,4 +21,4 @@
   tasks:
     -name: print url23
      debug:
-       msg: URL = {{URL2}}
+       msg: URL = {{ URL2 }}

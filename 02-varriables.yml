@@ -7,7 +7,7 @@
       debug:
         msg: URL = {{ URL }}
 
-- name:demo2 on play variblie2
+- name: demo2 on play variblie2
   host: all
   vars:
     URL: www.google.com

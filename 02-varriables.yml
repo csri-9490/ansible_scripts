@@ -21,4 +21,4 @@
   tasks:
     - name: Print URL1 var from CLI
       debug:
-        msg: URL1 = {{ URL1 }
+        msg: pusdfdf URL2 = {{ URL2 }}

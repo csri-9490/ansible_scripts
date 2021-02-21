@@ -17,7 +17,7 @@
         msg: URL = {{ URL }}
 
 - name:demo3
-  hosts:all
+  hosts: all
   tasks:
     -name: print url23
      debug:

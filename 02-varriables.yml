@@ -30,9 +30,10 @@
         msg: print inv var URL3 = {{ URL3 }}
 
 - name: demo on varible population from file
-  hosts:
-  vars:
+  hosts: all
+  vars_file:
     - filvar.yml
+
   tasks:
     - name: print varble from file
       debug:

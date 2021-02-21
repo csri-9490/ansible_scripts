@@ -15,3 +15,10 @@
     - name: print url2
       debug:
         msg: URL = {{ URL }}
+
+- name:demo3
+  hosts:all
+  tasks:
+    -name: print url23
+     debug:
+       msg: URL = {{URL2}}

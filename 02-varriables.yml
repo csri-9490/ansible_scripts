@@ -19,6 +19,6 @@
 - name: demo3
   hosts: all
   tasks:
-    -name: print url23
+    - name: print url23
      debug:
-       msg: URL = {{ URL2 }}
+       msg: URL2 = {{ URL2 }}

@@ -16,7 +16,7 @@
       debug:
         msg: URL = {{ URL }}
 
-- name:demo3
+- name: demo3
   hosts: all
   tasks:
     -name: print url23

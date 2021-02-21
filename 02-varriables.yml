@@ -32,7 +32,7 @@
 - name: demo on varible population from file
   hosts:
   vars:
-    - filevar.yml
+    - filvar.yml
   tasks:
     - name: print varble from file
       debug:

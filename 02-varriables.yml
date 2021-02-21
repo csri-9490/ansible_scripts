@@ -1,7 +1,7 @@
-- name:demo on play varaibles
-  hosts:all
+- name: demo on play variables
+  hosts: all
   vars:
-    URL:play.example.com
+    URL: play.example.com
   tasks:
     - debug:
         msg:URL = {{ URL }}

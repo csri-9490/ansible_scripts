@@ -8,7 +8,7 @@
         msg: URL = {{ URL }}
 
 - name: demo2 on play variblie2
-  host: all
+  hosts: all
   vars:
     URL: www.google.com
   tasks:

@@ -16,9 +16,9 @@
       debug:
         msg: URL = {{ URL }}
 
-- name: demo3
+- name: Demo on CLI Variables
   hosts: all
   tasks:
-    - name: print url23
-     debug:
-       msg: URL2 = {{ URL2 }}
+    - name: Print URL1 var from CLI
+      debug:
+        msg: URL1 = {{ URL1 }

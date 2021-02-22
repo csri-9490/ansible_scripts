@@ -29,13 +29,11 @@
       debug:
         msg: print inv var URL3 = {{ URL3 }}
 
-- name: demo on varible population from file
+- name: Demo variables from a file
   hosts: all
-  vars_file:
+  vars_files:
     - filvar.yml
-
   tasks:
-    - name: print varble from file
+    - name: Print URL_FILE
       debug:
-        msg: print file varible URL4 = {{ FILE_URL }}
-
+        msg: URL_FILE = {{ URL_FILE }}

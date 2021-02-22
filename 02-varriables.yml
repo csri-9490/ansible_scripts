@@ -41,12 +41,12 @@
 - name: Prompt for input
   hosts: all
   vars_prompt:
-    - name: 5
-      prompt: Enter URL5
+    - name: URL
+      prompt: Enter URL
       private: no
   tasks:
-    - name: Print URL5
+    - name: Print URL
       debug:
-        msg: URL5 = {{ URL5 }}
+        msg: URL = {{ URL }}
 
 

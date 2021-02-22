@@ -9,3 +9,11 @@
       debug:
         msg: "{{OUT.stdout}}"
 
+    - name: set a variable
+      set_fact:
+        UPTIME_OUTPUT: "{{ PUT.stdout}}"
+
+    - name: print uptime
+      debug:
+        msg: "Uptime = {{UPTIME_OUTPUT}}"
+

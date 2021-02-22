@@ -7,5 +7,5 @@
 
     - name: print uptime
       debug:
-        msg: "{{OUT}}"
+        msg: "{{OUT.stout}}"
 

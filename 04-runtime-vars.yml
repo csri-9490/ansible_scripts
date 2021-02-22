@@ -1,0 +1,11 @@
+- name: demo on runtime vars
+  hosts: all
+  tasks:
+    - name: grab uptime
+      shell: uptime
+      register: OUT
+
+    - name: print uptime
+      debug:
+        msg: "{{OUT}}"
+

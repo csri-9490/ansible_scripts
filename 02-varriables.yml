@@ -37,3 +37,14 @@
     - name: Print URL_FILE
       debug:
         msg: URL_FILE = {{ URL_FILE }}
+
+- name : prompt for input
+  hosts: all
+  var_promt
+  - name: URL
+    prompt: enter URL
+    private : No
+  tasks:
+    - name: Print URL
+
+

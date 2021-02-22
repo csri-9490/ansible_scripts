@@ -1,0 +1,6 @@
+- name: demon on facts
+  hosts: all
+  tasks:
+    - name: Print hostname
+      debug:
+        msg: HostName = {{ ansible_hostname }}

@@ -2,5 +2,4 @@
   hosts: all
   tasks:
     - name: Print hostname
-      debug:
-        msg: HostName = {{ ansible_hostname }}, OS Family = {{ ansible_os_family }}
+       msg: HostName = {{ ansible_hostname }}, OS Family = {{ ansible_os_family }}

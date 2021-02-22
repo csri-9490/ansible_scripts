@@ -11,7 +11,7 @@
 
     - name: set a variable
       set_fact:
-        UPTIME_OUTPUT: "{{ PUT.stdout}}"
+        UPTIME_OUTPUT: "{{ OUT.stdout}}"
 
     - name: print uptime
       debug:

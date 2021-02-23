@@ -4,6 +4,7 @@
     - name: execute if it is centos machine
       debug:
         msg: i am centos
+      when: ansible_os_family == "RedHat"
 
     - name: excute if debain
       debug:

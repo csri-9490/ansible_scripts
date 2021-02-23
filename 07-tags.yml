@@ -1,0 +1,13 @@
+- name: Demo on tags
+  hosts: all
+  tasks:
+    - name: excute if  it is centos machine
+      debug:
+        msg: Iam centos
+      tags:
+        - redhat
+    - name: excute if it is debian machine
+      debug:
+        msg: iam debian
+      tags:
+        - debian

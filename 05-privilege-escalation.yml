@@ -2,6 +2,6 @@
   hosts: all
   tasks:
     - shell: id
-      register: outer
+      register: csr
     - debug:
-        msg: "{{outer.stdout}}"
+        msg: "{{csr.stdout}}"

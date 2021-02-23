@@ -1,0 +1,7 @@
+-name: Demo on privilege-escalation
+ hosts: all
+  tasks:
+    -shell: id
+     registerL put
+    -debug:
+      msg: "{{out.stdout}}"

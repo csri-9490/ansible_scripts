@@ -8,4 +8,4 @@
 
     - name: excute if debain
       debug:
-        msh: Iam debaain
+        msg: Iam debaain

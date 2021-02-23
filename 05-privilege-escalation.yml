@@ -2,6 +2,6 @@
  hosts: all
   tasks:
     -shell: id
-     registerL put
+     register: out
     -debug:
       msg: "{{out.stdout}}"

@@ -1,7 +1,9 @@
 - name: Demo on privilege-escalation
   hosts: all
+  become: yes    #if the launching server is not the user  then need to put this condition
+  #become can be decared on task level as well,so only that task will be executed as sudo,other will be normal
   tasks:
     - shell: id
-      register: csr
+      register: out
     - debug:
-        msg: "{{csr.stdout}}"
+        msg: "{{out.stdout}}"

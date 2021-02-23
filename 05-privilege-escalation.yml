@@ -4,4 +4,4 @@
     - shell: id
       register: out
     - debug:
-      msg: "{{out.stdout}}"
+        msg: "{{out.stdout}}"

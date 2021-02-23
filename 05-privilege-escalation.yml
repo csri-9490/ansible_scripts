@@ -1,7 +1,7 @@
--name: Demo on privilege-escalation
+- name: Demo on privilege-escalation
  hosts: all
   tasks:
-    -shell: id
+    - shell: id
      register: out
-    -debug:
+    - debug:
       msg: "{{out.stdout}}"

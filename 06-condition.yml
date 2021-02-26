@@ -6,6 +6,7 @@
         msg: i am centos
       when: ansible_os_family == "centos"
 
+
     - name: excute if debain
       debug:
         msg: Iam debaain

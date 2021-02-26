@@ -19,4 +19,4 @@ aws route53 change-resource-record-sets  --hosted-zone-id Z0438602WZKT8OQ2PFB4  
 
 sed -i -e "/${component}/ d" ../Inventroy
 PUBLIC_IpAddress=$(aws ec2 describe-instances  --filters "Name=tag:Name,Values=${component}"  --query 'Reservations[*].Instances[*].PublicIpAddress' --output text)
-echo "${PUBLIC_IPADDRESS} APP=${component}" >>../Inventroy
+echo "${PUBLIC_IpAddress} APP=${component}" >>../Inventroy

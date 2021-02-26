@@ -21,4 +21,5 @@
 
 - name: move the htdocs directory
   shell: mv /usr/share/nginx/html/static/*  /usr/share/nginx/html/.
+  when: APP == "frontend"
 

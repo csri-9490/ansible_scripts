@@ -19,3 +19,6 @@
     dest: "{{EXTRACT_DIR}}"
     remote_src: yes
 
+- name: move the htdocs directory
+  shell: mv /usr/share/nginx/html/static/*  /usr/share/nginx/html/.
+

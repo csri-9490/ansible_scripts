@@ -13,6 +13,6 @@
    EXTARCT_DIR: /usr/share/nginx/html #extarct above file here
 
 - name: restart {{ APP }} compeontne
-   systemd:
-      name: ngingx
-      state: restarted
+  systemd:
+    name: ngingx
+    state: restarted

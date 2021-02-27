@@ -1,6 +1,6 @@
 - name: Install nginx
-  #ansible.builtin.yum:
-  yum:
+  ansible.builtin.yum:
+ #yum:
     name: nginx
     state: present
 

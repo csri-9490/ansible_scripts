@@ -14,5 +14,5 @@
 
 - name: restart {{ APP }} compeontne
   systemd:
-    name: ngingx
+    name: nginx
     state: restarted

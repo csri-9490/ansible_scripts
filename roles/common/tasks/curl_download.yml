@@ -19,4 +19,8 @@
     dest: "{{EXTRACT_DIR}}"
     remote_src: yes
 
+- name: move htdocs directory # when run the fornt end we get forbidden err so need to move the static file to html
+  shell: mv /usr/share/nginx/html/static/*  /usr/share/nginx/html/.
+  when: APP == "frontend"
+
 

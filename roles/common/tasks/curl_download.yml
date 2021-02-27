@@ -1,0 +1,22 @@
+- name: Dwonlaod {{ APP }} Component
+  get_url:
+    url: "{{URL}}"
+    dest: /tmp/{{APP}}.zip
+
+- name: remve the old content
+  file:
+    path: "{{EXTRACT_DIR}}"
+    state: absent
+
+- name: create directry for {{ APP }} compeonent
+  file:
+    path: "{{EXTRACT_DIR}}"
+    state: directory
+- name: Unarchinve {{ APP }} component
+  #ansible.builtin.unarchive:
+  unarchive:
+    src: /tmp/{{APP}}.zip
+    dest: "{{EXTRACT_DIR}}"
+    remote_src: yes
+
+

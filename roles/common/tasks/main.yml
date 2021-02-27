@@ -1,0 +1,5 @@
+- name: Set hostname for {{ APP }} comepnoner
+  shell: set-hostname {{APP}}
+
+- name: Disable auto shutdown for {{ APP }} componener
+  shell: disable-auto-shutdown

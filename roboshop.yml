@@ -1,6 +1,6 @@
 - name: Setup roboshop project
   hosts: all
-  #become: yes
+  become: yes
   roles:
     -frontend
     -catalogue

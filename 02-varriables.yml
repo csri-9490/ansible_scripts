@@ -22,7 +22,7 @@
     - name: Print URL1 var from CLI
       debug:
         msg: pusdfdf URL2 = {{ URL2 }}
-- name: Demo on cli from  Inventory varibels
+- name: Demo on cli from  inventory varibels
   hosts: all
   tasks:
     - name: print URL3 varaibles from inventory loc

@@ -4,7 +4,7 @@
   tasks:
     - name: Import Frontend
       ansible.builtin.import_role:
-        name: fronend
+        name: frontend
       tags: fronend
       when: APP == "frontend"
     - name: Import catalogue

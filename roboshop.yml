@@ -20,4 +20,4 @@
         name: mongodb
       tags:
         - mongodb
-      #when: APP == "mongodb"
+      when: APP == "mongodb"

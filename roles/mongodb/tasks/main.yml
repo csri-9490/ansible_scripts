@@ -7,9 +7,24 @@
   yum:
     name: mongodb-org
     state: installed
+
 - name: Update monogdb configuration file from listing on 127.0.0.1 to 0.0.0.0
   ansible.builtin.replace:
     path: /etc/mongod.conf
     regexp: '127.0.0.1'
     replace: '0.0.0.0'
+
+- name: Start mongodb service
+  systemd:
+    name: mongod
+    state: restarted
+    enabled: yes
+
+- name: download {{ APP }} Component
+  include_role:
+    name: common
+    tasks_from: curl_download
+  vars:
+    URL: "https://dev.azure.com/DevOps-Batches/f635c088-1047-40e8-8c29-2e3b05a38010/_apis/git/repositories/03f2af34-e227-44b8-a9f2-c26720b34942/items?path=%2F&versionDescriptor%5BversionOptions%5D=0&versionDescriptor%5BversionType%5D=0&versionDescriptor%5Bversion%5D=master&resolveLfs=true&%24format=zip&api-version=5.0&download=true"
+    EXTRACT_DIR: /tmp  #extarct above file here
 

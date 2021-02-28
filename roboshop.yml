@@ -1,24 +1,6 @@
-- name: Setup Robohsop Project
+- name: Setup roboshop project
   hosts: all
-  become: yes
-  tasks:
-    - name: Import Catalogue
-      ansible.builtin.import_role:
-        name: catalogue
-      tags:
-        - catalogue
-      when: APP == "catalogue"
-
-    - name: Import Frontend
-      ansible.builtin.import_role:
-        name: frontend
-      tags:
-        - frontend
-      when: APP == "frontend"
-
-    - name: Import MongoDB
-      ansible.builtin.import_role:
-        name: mongodb
-      tags:
-        - mongodb
-      when: APP == "mongodb"
+  #become: yes
+  roles:
+    -frontend
+    -catalogue

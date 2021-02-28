@@ -3,21 +3,20 @@
   become: yes
   tasks:
     - name: Import Frontend
-      #ansible.builtin.import_role:
-      import_role:
+      ansible.builtin.import_role:
         name: frontend
       tags:
         - frontend
       when: APP == "frontend"
+
     - name: Import catalogue
-      #ansible.builtin.import_role:
-      import_role:
+      ansible.builtin.import_role:  #import_role:
         name: catalogue
       tags: catalogue
       when: APP == "catalogue"
 
     - name: Import mongodb
-      import_role:
+      ansible.builtin.import_role:
         name: mongodb
       tags:
         - mongodb

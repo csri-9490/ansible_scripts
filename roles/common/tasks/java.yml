@@ -1,9 +1,7 @@
-- name: Install NodeJS
+- name: Install Maven
   ansible.builtin.yum:
     name:
-      - nodejs
-      - make
-      - gcc-c++
+      - maven
     state: present
 
 - name: Download {{ COMPONENT }} Component
@@ -12,9 +10,10 @@
     EXTRACT_DIR: /home/roboshop/{{COMPONENT}}
     APP_USER: roboshop
 
-- name: Install NodeJS Modules
-  community.general.npm:
-    path: /home/roboshop/{{COMPONENT}}
+- name: Install Maven Modules
+  ansible.builtin.shell: mvn clean package && mv target/shipping-1.0.jar shipping.jar
+  args:
+    chdir: /home/roboshop/{{COMPONENT}}
   become_user: roboshop
 
 - name: Download {{ COMPONENT }} Component

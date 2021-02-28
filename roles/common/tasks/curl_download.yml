@@ -1,26 +1,27 @@
-- name: Dwonlaod {{ APP }} Component
-  get_url:
+- name: Download {{ COMPONENT }} Component
+  ansible.builtin.get_url:
     url: "{{URL}}"
-    dest: /tmp/{{APP}}.zip
+    dest: /tmp/{{COMPONENT}}.zip
 
-- name: remve the old content
-  file:
+- name: Remove old content
+  ansible.builtin.file:
     path: "{{EXTRACT_DIR}}"
     state: absent
 
-- name: create directry for {{ APP }} compeonent
-  file:
+- name: Create directory for {{ COMPONENT }} component
+  ansible.builtin.file:
     path: "{{EXTRACT_DIR}}"
     state: directory
-- name: Unarchinve {{ APP }} component
-  #ansible.builtin.unarchive:
-  unarchive:
-    src: /tmp/{{APP}}.zip
+  become_user: "{{APP_USER}}"
+
+- name: Unarchive {{ COMPONENT }} Component
+  ansible.builtin.unarchive:
+    src: /tmp/{{COMPONENT}}.zip
     dest: "{{EXTRACT_DIR}}"
     remote_src: yes
+  become_user: "{{APP_USER}}"
 
-- name: move htdocs directory # when run the fornt end we get forbidden err so need to move the static file to html
-  shell: mv /usr/share/nginx/html/static/*  /usr/share/nginx/html/.
-  when: APP == "frontend"
-
-
+- name: Move Htdocs Directory
+  ansible.builtin.shell: mv /usr/share/nginx/html/static/* /usr/share/nginx/html/.
+  when: COMPONENT == "frontend"
+  # A shell command is decided to use over ansible module, Since we have static dir which is part of html directory causing the recursive problem for ansible module.
